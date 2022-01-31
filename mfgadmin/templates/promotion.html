@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    
+  </head>
+  <body>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+<body>
+{% comment %} <div class="container">
+    <div class="f-group">
+        <label for =""> country</label>
+        <select name="select" id="select" onchange="populate(this.id),'select2'">
+            <option value =""> --choose -- </option>
+            <option value ="india"> india</option>
+            <option value ="america"> america</option>
+        </select>
+    </div> 
+    <div class="f=group">
+        <label for =""> city </label>
+        <select name="select2" id="select2"> </select>
+    </div>
+</div>
+<script>
+    function populate(s1,s2)
+    {
+        var s1=document.getElementById(s1);
+        var s2=document.getElementById(s2);
+
+        s2.innerHTML=" "
+        if (s1.value=="india")
+        {
+            var optionArray=['delhi','mumbai','pune']
+        }
+        else if (s1.value=="america")
+        {
+            var optionArray=['Newyork','chicago','lasvegas'] ;
+        }
+        for (var in optionArray)
+        {
+            var pair =optionArray[option].split("|")
+            var newoption = document.createElement("option")
+            newoption.value()=pair[0];
+            newoption.innerHTML=pair[1];
+            s2.option.add(newoption)
+        }
+    }
+</script> {% endcomment %}
+<form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Retail Barcode</label>
+      <input type="text" class="form-control" name="retail_barcode"id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Promotions Title</label>
+      <input type="text" class="form-control" name="promotion_title" id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Product</label>
+      <input type="text" class="form-control" name="product"id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">M code</label>
+      <input type="text" class="form-control" name="m_code"id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> Status</label>
+      <input type="text" class="form-control" name="status"id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> Available for</label>
+      <input type="text" class="form-control" name="avl"id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> Start Date</label>
+      <input type="date" class="form-control"name="s_date" id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> End Date</label>
+      <input type="date" class="form-control" name="e_date"id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> Price</label>
+      <input type="text" class="form-control"name="price" id="promotitle">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> Quantity</label>
+      <input type="text" class="form-control"n name="qty" id="promotitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"> Unique Code/Barcode</label>
+      <input type="text" class="form-control"name="u_code" id="promotitle">
+    </div>
+
+    <div class="mb-3 form-check">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+ 
+  
+ 
+
+ 
+</form>
+
+<form name="form1" id="form1" action="/action_page.php">
+    Subjects: <select name="subject" id="subject">
+      <option value="" selected="selected">Select subject</option>
+    </select>
+    <br><br>
+    Topics: <select name="topic" id="topic">
+      <option value="" selected="selected">Please select subject first</option>
+    </select>
+    <br><br>
+    Chapters: <select name="chapter" id="chapter">
+      <option value="" selected="selected">Please select topic first</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form> 
+
+<script>
+  var subjectObject = {
+    "Front-end": {
+      "HTML": ["Links", "Images", "Tables", "Lists"],
+      "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
+      "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]
+    },
+    "Back-end": {
+      "PHP": ["Variables", "Strings", "Arrays"],
+      "SQL": ["SELECT", "UPDATE", "DELETE"]
+    }
+  }
+  window.onload = function() {
+    var subjectSel = document.getElementById("subject");
+    var topicSel = document.getElementById("topic");
+    var chapterSel = document.getElementById("chapter");
+    for (var x in subjectObject) {
+      subjectSel.options[subjectSel.options.length] = new Option(x, x);
+    }
+    subjectSel.onchange = function() {
+      //empty Chapters- and Topics- dropdowns
+      chapterSel.length = 1;
+      topicSel.length = 1;
+      //display correct values
+      for (var y in subjectObject[this.value]) {
+        topicSel.options[topicSel.options.length] = new Option(y, y);
+      }
+    }
+    topicSel.onchange = function() {
+      //empty Chapters dropdown
+      chapterSel.length = 1;
+      //display correct values
+      var z = subjectObject[subjectSel.value][this.value];
+      for (var i = 0; i < z.length; i++) {
+        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+      }
+    }
+  } 
+</script>
+
+
+</body>
+
+</html> 
