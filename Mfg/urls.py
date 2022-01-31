@@ -14,10 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from operator import imod
+from os import stat
+from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from mfgadmin import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +29,4 @@ urlpatterns = [
     path('promotion/',views.promotions,name="promotion"),
     path('promo/',views.promotion,name="promo"),
     path('assign-promo/',views.assign_promo,name="assign_promo"),
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

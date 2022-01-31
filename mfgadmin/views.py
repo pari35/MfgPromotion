@@ -10,6 +10,7 @@ from .models import Promotions
 from .serializers import PromotionSerializer
 from rest_framework.decorators import api_view
 from .serializers import PromotionSerializer
+from .forms import Promotions
 
 
 # Create your views here.
@@ -26,18 +27,9 @@ def promotions(request):
 #view for promotion tab
 def promotion(request):
     if request.method=="POST":
-        retail_barcode=request.POST['retail_barcode']
-        Promotions_title=request.POST['promotion_title']
-        product=request.POST['product']
-        Mcode=request.POST['m_code']
-        status=request.POST['status']
-        available_for=request.POST['avl']
-        start_date=request.POST['s_date']
-        end_date=request.POST['e_date']
-        price=request.POST['price']
-        quantity=request.POST['qty']
-        Promotions(retail_barcode=retail_barcode,Promotions_title=Promotions_title,product=product,Mcode=Mcode,status=status,available_for=available_for,start_date=start_date,end_date=end_date,price=price,quantity=quantity).save()
-        
+        promo=Promotions(request.POST) 
+        if promo.is_valid:
+            promo.save()      
     return render(request,'promotion.html')
 
 def assign_promo(request):
