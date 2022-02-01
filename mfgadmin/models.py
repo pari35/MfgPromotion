@@ -13,14 +13,15 @@ class Promotions(models.Model):
     start_date=models.DateField()
     end_date=models.DateField()
     price=models.IntegerField()
-    quantity=models.IntegerField(default=None)
+    quantity=models.IntegerField()
 
 #model for assign new promo
 class AssignPromotion(models.Model):
     station_id = models.BigAutoField(primary_key=True)
-    station_name=models.CharField(max_length=50)
+    station_name=models.CharField(max_length=50, null=True)
     operation_region=models.CharField(max_length=20)
     region=models.CharField(max_length=50)
     area=models.CharField(max_length=50)
     promo_image=models.ImageField(null=True,blank=True,upload_to="images/")
 
+# @action(detail=True,methods=['POST'])

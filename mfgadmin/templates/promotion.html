@@ -1,19 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+      <img src="{% static 'images/mfg.png' %}">
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      
+    </head>
+    <body>
+    {% include 'nav.html' %}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    
-  </head>
-  <body>
-    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -66,128 +68,97 @@
         }
     }
 </script> {% endcomment %}
-<form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Retail Barcode</label>
-      <input type="text" class="form-control" name="retail_barcode"id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
 
-    <div class="mb-3">
+<div class ="promo"> 
+  
+  <ul class="nav flex-column">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="">Promotion details</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Assign Promotions</a>
+    </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#">Images</a>
+  </li>
+  
+</ul>
+</div>
+
+<div class="d-flex align-items-center">   
+<form method="POST">
+  {% csrf_token %}
+  <div class="form"> 
+    
+   
+    <div class="row" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label">Promotions Title</label>
-      <input type="text" class="form-control" name="promotion_title" id="promotitle">
+      <input type="text" class="form-control" name="promotion_title" id="promotitle"> <br>
+
     </div>
 
-    <div class="mb-3">
+    <div class="row" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label">Product</label>
       <input type="text" class="form-control" name="product"id="promotitle">
     </div>
 
-    <div class="mb-3">
+    <div class="row" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label">M code</label>
       <input type="text" class="form-control" name="m_code"id="promotitle">
     </div>
 
-    <div class="mb-3">
+    <div class="row" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> Status</label>
       <input type="text" class="form-control" name="status"id="promotitle">
     </div>
-
-    <div class="mb-3">
+    
+    <div class="mx-auto" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> Available for</label>
       <input type="text" class="form-control" name="avl"id="promotitle">
     </div>
 
-    <div class="mb-3">
+    <div class="mx-auto" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> Start Date</label>
       <input type="date" class="form-control"name="s_date" id="promotitle">
     </div>
 
-    <div class="mb-3">
+    <div class="mx-auto" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> End Date</label>
       <input type="date" class="form-control" name="e_date"id="promotitle">
     </div>
 
-    <div class="mb-3">
+    <div class="mx-auto" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> Price</label>
       <input type="text" class="form-control"name="price" id="promotitle">
     </div>
-    <div class="mb-3">
+    <div class="row" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> Quantity</label>
-      <input type="text" class="form-control"n name="qty" id="promotitle">
+      <input type="text" class="form-control" name="qty" id="promotitle">
     </div>
 
-    <div class="mb-3">
+    <div class="row" style="width: 200px;">
       <label for="exampleInputPassword1" class="form-label"> Unique Code/Barcode</label>
       <input type="text" class="form-control"name="u_code" id="promotitle">
     </div>
 
-    <div class="mb-3 form-check">
+    <div class="mx-auto" style="width: 200px;">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Assign</button>
  
   
  
-
- 
+  
 </form>
 
-<form name="form1" id="form1" action="/action_page.php">
-    Subjects: <select name="subject" id="subject">
-      <option value="" selected="selected">Select subject</option>
-    </select>
-    <br><br>
-    Topics: <select name="topic" id="topic">
-      <option value="" selected="selected">Please select subject first</option>
-    </select>
-    <br><br>
-    Chapters: <select name="chapter" id="chapter">
-      <option value="" selected="selected">Please select topic first</option>
-    </select>
-    <br><br>
-    <input type="submit" value="Submit">
-  </form> 
-
-<script>
-  var subjectObject = {
-    "Front-end": {
-      "HTML": ["Links", "Images", "Tables", "Lists"],
-      "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
-      "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]
-    },
-    "Back-end": {
-      "PHP": ["Variables", "Strings", "Arrays"],
-      "SQL": ["SELECT", "UPDATE", "DELETE"]
-    }
+</div>
+</div>
+<style>
+  .form{
+    margin:auto
   }
-  window.onload = function() {
-    var subjectSel = document.getElementById("subject");
-    var topicSel = document.getElementById("topic");
-    var chapterSel = document.getElementById("chapter");
-    for (var x in subjectObject) {
-      subjectSel.options[subjectSel.options.length] = new Option(x, x);
-    }
-    subjectSel.onchange = function() {
-      //empty Chapters- and Topics- dropdowns
-      chapterSel.length = 1;
-      topicSel.length = 1;
-      //display correct values
-      for (var y in subjectObject[this.value]) {
-        topicSel.options[topicSel.options.length] = new Option(y, y);
-      }
-    }
-    topicSel.onchange = function() {
-      //empty Chapters dropdown
-      chapterSel.length = 1;
-      //display correct values
-      var z = subjectObject[subjectSel.value][this.value];
-      for (var i = 0; i < z.length; i++) {
-        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-      }
-    }
-  } 
-</script>
-
-
+</style>
 </body>
 
 </html> 

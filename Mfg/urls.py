@@ -29,4 +29,6 @@ urlpatterns = [
     path('promotion/',views.promotions,name="promotion"),
     path('promo/',views.promotion,name="promo"),
     path('assign-promo/',views.assign_promo,name="assign_promo"),
+    path('navbar/',views.nav_bar,name="nav"),
+    path('assign-promo-image/',views.assign_promo_image,name="assign_promo_image"),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
